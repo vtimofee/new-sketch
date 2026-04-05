@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
-    
-    
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-
+    <meta charset="UTF-8">
+    <title>p5 in a div</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
   </head>
+
   <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
-    <p>test</p>
-    <img src="hello.png">
+    <h1>Sketch inside a container</h1>
+
+    <div id="sketch-holder"></div>
+
+    <script>
+      function setup() {
+        let canvas = createCanvas(400, 400);
+        canvas.parent("sketch-holder");
+        background(220);
+      }
+
+      function draw() {
+        ellipse(mouseX, mouseY, 40, 40);
+      }
+    </script>
   </body>
 </html>
